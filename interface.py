@@ -13,5 +13,7 @@ class AnalyseurTexte(InterfaceAnalyseur):
         is_palindrome = chaine.lower().replace(" ", "") == mirrored_chaine.lower().replace(" ", "")
 
         response += mirrored_chaine
+        if is_palindrome:
+            response += " Bien dit"
 
         return response
