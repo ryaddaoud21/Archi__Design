@@ -60,6 +60,9 @@ class Horloge(ABC):
     def heure_actuelle(self) -> int:
         pass
 
+class HorlogeSysteme(Horloge):
+    def heure_actuelle(self) -> int:
+        return datetime.datetime.now().hour
 
 def main():
     langue = input("Choisissez votre langue (fr, en): ")
