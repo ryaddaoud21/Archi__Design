@@ -15,5 +15,5 @@ class AnalyseurTexte(InterfaceAnalyseur):
         response += mirrored_chaine
         if is_palindrome:
             response += " Bien dit"
-
+        response += " Au Revoir"
         return response
