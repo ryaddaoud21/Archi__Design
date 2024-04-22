@@ -78,10 +78,12 @@ def main():
         print("Langue non supportée")
         return
 
-    analyser = AnalyseurTexte(langue_instance)
+    horloge = HorlogeSysteme()
+    analyser = AnalyseurTexte(langue_instance, horloge)
 
-    heure = datetime.datetime.now().hour
-    print(langue_instance.saluer(heure))
+    print(langue_instance.saluer(horloge.heure_actuelle()))
+
+
 
     while True:
         texte = input("Écrivez quelque chose: ")
