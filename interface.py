@@ -19,6 +19,22 @@ class AnalyseurTexte(InterfaceAnalyseur):
         return response
 
 
+
+class Langue(ABC):
+    @abstractmethod
+    def saluer(self, heure: int) -> str:
+        pass
+
+    @abstractmethod
+    def feliciter(self) -> str:
+        pass
+
+    @abstractmethod
+    def acquitter(self) -> str:
+        pass
+
+
+
 # Création d'une instance de la classe
 analyseur = AnalyseurTexte()
 
