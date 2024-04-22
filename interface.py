@@ -12,32 +12,40 @@ class Langue(ABC):
     @abstractmethod
     def acquitter(self) -> str:
         pass
-
 class Francais(Langue):
     def saluer(self, heure: int) -> str:
-        if 6 <= heure < 18:
+        if 6 <= heure < 12:
             return "Bonjour"
-        else:
+        elif 12 <= heure < 18:
+            return "Bon après-midi"
+        elif 18 <= heure < 22:
             return "Bonsoir"
+        else:
+            return "Bonne nuit"
 
-    def feliciter(self) -> str:
-        return "Bien dit !"
-
-    def acquitter(self) -> str:
-        return "Au revoir, passez une bonne journée !"
+    def acquitter(self, heure: int) -> str:
+        if 6 <= heure < 12:
+            return "Bonne journée"
+        elif 12 <= heure < 18:
+            return "Bonne après-midi"
+        elif 18 <= heure < 22:
+            return "Bonne soirée"
+        else:
+            return "Bonne nuit"
 
 class Anglais(Langue):
     def saluer(self, heure: int) -> str:
-        if 6 <= heure < 18:
-            return "Good morning"
+        if 6 <= heure < 12:
+            return "Good Morning"
+        elif 12 <= heure < 18:
+            return "Good Afternoon"
+        elif 18 <= heure < 22:
+            return "Good Evening"
         else:
-            return "Good evening"
+            return "Good Night"
 
-    def feliciter(self) -> str:
-        return "Well said!"
-
-    def acquitter(self) -> str:
-        return "Goodbye, have a nice day!"
+    def acquitter(self, heure: int) -> str:
+        return "Goodbye"
 
 class Horloge(ABC):
     @abstractmethod
