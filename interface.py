@@ -63,6 +63,9 @@ class AnalyseurTexte(InterfaceAnalyseur):
 
 
 
+
+
+
 # Création d'une instance de la classe
 analyseur = AnalyseurTexte()
 
