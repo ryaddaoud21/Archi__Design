@@ -17,3 +17,20 @@ class AnalyseurTexte(InterfaceAnalyseur):
             response += " Bien dit"
         response += " Au Revoir"
         return response
+
+
+# Création d'une instance de la classe
+analyseur = AnalyseurTexte()
+
+# Exemples d'utilisation de la méthode analyser_chaine
+texte1 = "bonjour"
+resultat1 = analyseur.analyser_chaine(texte1)
+print(resultat1)  # Bonjour ruojnob Au Revoir
+
+texte2 = "kayak"
+resultat2 = analyseur.analyser_chaine(texte2)
+print(resultat2)  # Bonjour kayak Bien dit Au Revoir
+
+texte3 = "Salut"
+resultat3 = analyseur.analyser_chaine(texte3)
+print(resultat3)  # Bonjour tulaS Au Revoir
