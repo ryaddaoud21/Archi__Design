@@ -33,6 +33,31 @@ class Langue(ABC):
     def acquitter(self) -> str:
         pass
 
+class Francais(Langue):
+    def saluer(self, heure: int) -> str:
+        if 6 <= heure < 18:
+            return "Bonjour"
+        else:
+            return "Bonsoir"
+
+    def feliciter(self) -> str:
+        return "Bien dit !"
+
+    def acquitter(self) -> str:
+        return "Au revoir, passez une bonne journée !"
+
+class Anglais(Langue):
+    def saluer(self, heure: int) -> str:
+        if 6 <= heure < 18:
+            return "Good morning"
+        else:
+            return "Good evening"
+
+    def feliciter(self) -> str:
+        return "Well said!"
+
+    def acquitter(self) -> str:
+        return "Goodbye, have a nice day!"
 
 
 # Création d'une instance de la classe
