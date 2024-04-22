@@ -55,6 +55,11 @@ class AnalyseurTexte(InterfaceAnalyseur):
         else:
             return chaine_inverse
 
+class Horloge(ABC):
+    @abstractmethod
+    def heure_actuelle(self) -> int:
+        pass
+
 
 def main():
     langue = input("Choisissez votre langue (fr, en): ")
