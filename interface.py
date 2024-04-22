@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+import datetime
 class Langue(ABC):
     @abstractmethod
     def saluer(self, heure: int) -> str:
@@ -49,35 +49,38 @@ class AnalyseurTexte(InterfaceAnalyseur):
         self.langue = langue
 
     def analyser_chaine(self, chaine: str) -> str:
-        response = "Bonjour"
-
-        mirrored_chaine = chaine[::-1]
-        is_palindrome = chaine.lower().replace(" ", "") == mirrored_chaine.lower().replace(" ", "")
-
-        response += mirrored_chaine
-        if is_palindrome:
-            response += " Bien dit"
-        response += " Au Revoir"
-        return response
+        chaine_inverse = chaine[::-1]
+        if chaine.lower() == chaine_inverse.lower():
+            return f"{chaine} {self.langue.feliciter()}"
+        else:
+            return chaine_inverse
 
 
+def main():
+    langue = input("Choisissez votre langue (fr, en): ")
+    if langue == 'fr':
+        langue_instance = Francais()
+    elif langue == 'en':
+        langue_instance = Anglais()
+    else:
+        print("Langue non supportée")
+        return
+
+    analyser = AnalyseurTexte(langue_instance)
+
+    heure = datetime.datetime.now().hour
+    print(langue_instance.saluer(heure))
+
+    while True:
+        texte = input("Écrivez quelque chose: ")
+        if texte.lower() == 'quit':
+            print(langue_instance.acquitter())
+            break
+
+        print(analyser.analyser_chaine(texte))
+        print(f"Mirroir: {texte[::-1]}")
+
+if __name__ == "__main__":
+    main()
 
 
-
-
-
-# Création d'une instance de la classe
-analyseur = AnalyseurTexte()
-
-# Exemples d'utilisation de la méthode analyser_chaine
-texte1 = "bonjour"
-resultat1 = analyseur.analyser_chaine(texte1)
-print(resultat1)  # Bonjour ruojnob Au Revoir
-
-texte2 = "kayak"
-resultat2 = analyseur.analyser_chaine(texte2)
-print(resultat2)  # Bonjour kayak Bien dit Au Revoir
-
-texte3 = "Salut"
-resultat3 = analyseur.analyser_chaine(texte3)
-print(resultat3)  # Bonjour tulaS Au Revoir
