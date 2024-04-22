@@ -8,4 +8,8 @@ class InterfaceAnalyseur(ABC):
 class AnalyseurTexte(InterfaceAnalyseur):
     def analyser_chaine(self, chaine: str) -> str:
         response = "Bonjour"
+
+        mirrored_chaine = chaine[::-1]
+        is_palindrome = chaine.lower().replace(" ", "") == mirrored_chaine.lower().replace(" ", "")
+
         return response
