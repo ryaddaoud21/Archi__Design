@@ -7,4 +7,5 @@ class InterfaceAnalyseur(ABC):
 
 class AnalyseurTexte(InterfaceAnalyseur):
     def analyser_chaine(self, chaine: str) -> str:
-        pass
+        response = "Bonjour"
+        return response
