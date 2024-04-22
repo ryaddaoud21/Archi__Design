@@ -6,12 +6,13 @@ class Langue(ABC):
         pass
 
     @abstractmethod
-    def feliciter(self) -> str:
+    def acquitter(self, heure: int) -> str:
         pass
 
     @abstractmethod
-    def acquitter(self) -> str:
+    def feliciter(self) -> str:
         pass
+
 class Francais(Langue):
     def saluer(self, heure: int) -> str:
         if 6 <= heure < 12:
@@ -22,7 +23,6 @@ class Francais(Langue):
             return "Bonsoir"
         else:
             return "Bonne nuit"
-
     def acquitter(self, heure: int) -> str:
         if 6 <= heure < 12:
             return "Bonne journée"
@@ -32,6 +32,10 @@ class Francais(Langue):
             return "Bonne soirée"
         else:
             return "Bonne nuit"
+
+    def feliciter(self) -> str:
+        return "Bien dit !"
+
 
 class Anglais(Langue):
     def saluer(self, heure: int) -> str:
@@ -47,6 +51,10 @@ class Anglais(Langue):
     def acquitter(self, heure: int) -> str:
         return "Goodbye"
 
+    def feliciter(self) -> str:
+        return "Well said!"
+
+
 class Horloge(ABC):
     @abstractmethod
     def heure_actuelle(self) -> int:
@@ -61,6 +69,8 @@ class InterfaceAnalyseur(ABC):
     def analyser_chaine(self, chaine: str) -> str:
         pass
 
+
+
 class AnalyseurTexte(InterfaceAnalyseur):
     def __init__(self, langue: Langue, horloge: Horloge):
         self.langue = langue
@@ -70,10 +80,9 @@ class AnalyseurTexte(InterfaceAnalyseur):
     def analyser_chaine(self, chaine: str) -> str:
         chaine_inverse = chaine[::-1]
         if chaine.lower() == chaine_inverse.lower():
-            return f"{chaine} {self.langue.feliciter()}"
+            return f"{chaine}  {self.langue.feliciter()}"
         else:
             return chaine_inverse
-
 
 
 def main():
@@ -96,7 +105,7 @@ def main():
     while True:
         texte = input("Écrivez quelque chose: ")
         if texte.lower() == 'quit':
-            print(langue_instance.acquitter())
+            print(langue_instance.acquitter(horloge.heure_actuelle()))
             break
 
         print(analyser.analyser_chaine(texte))
