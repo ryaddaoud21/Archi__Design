@@ -12,4 +12,6 @@ class AnalyseurTexte(InterfaceAnalyseur):
         mirrored_chaine = chaine[::-1]
         is_palindrome = chaine.lower().replace(" ", "") == mirrored_chaine.lower().replace(" ", "")
 
+        response += mirrored_chaine
+
         return response
