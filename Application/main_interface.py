@@ -1,4 +1,6 @@
-from services import Francais, Anglais, HorlogeSysteme, AnalyseurTexte
+from Domain.services import Francais, Anglais, AnalyseurTexte
+from Infrastructure.HorlogeSysteme import HorlogeSysteme
+
 
 def main():
     while True:

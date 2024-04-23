@@ -1,7 +1,6 @@
 import unittest
-from unittest.mock import MagicMock
-from services import Francais, HorlogeSysteme, AnalyseurTexte
-
+from Domain.services import Francais, AnalyseurTexte
+from Infrastructure.HorlogeSysteme import HorlogeSysteme
 class TestAnalyseurTexte(unittest.TestCase):
     def setUp(self):
         self.langue = Francais()

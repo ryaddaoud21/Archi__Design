@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-import datetime
 
 class Langue(ABC):
     @abstractmethod
@@ -61,9 +60,6 @@ class Horloge(ABC):
     def heure_actuelle(self) -> int:
         pass
 
-class HorlogeSysteme(Horloge):
-    def heure_actuelle(self) -> int:
-        return datetime.datetime.now().hour
 
 class InterfaceAnalyseur(ABC):
     @abstractmethod

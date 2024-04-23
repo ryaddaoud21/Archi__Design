@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from urllib.parse import parse_qs
-from services import Francais, Anglais, HorlogeSysteme, AnalyseurTexte
+from Domain.services import Francais, Anglais, AnalyseurTexte
+from Infrastructure.HorlogeSysteme import HorlogeSysteme
+
 
 
 class RequetesHandler(BaseHTTPRequestHandler):
