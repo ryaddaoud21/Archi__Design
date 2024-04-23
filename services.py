@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import datetime
+
 class Langue(ABC):
     @abstractmethod
     def saluer(self, heure: int) -> str:
