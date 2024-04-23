@@ -1,29 +1,28 @@
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
-from Source.Domain.Langue import Anglais, Francais
+from Source.Domain.Langue.FabriqueLangue import FabriqueLangue
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 
 
 def main():
     while True:
-        langue = input("Choisissez votre langue (fr, en): ")
-        if langue == 'fr':
-            langue_instance = Francais()
+        langue_code = input("Choisissez votre langue (fr, en): ")
+        try:
+            langue = FabriqueLangue.creer_langue(langue_code)
             break
-        elif langue == 'en':
-            langue_instance = Anglais()
-            break
-        else:
+        except ValueError as e:
+            print(e)
             print("Langue non supportée. Veuillez choisir entre 'fr' pour le français et 'en' pour l'anglais.")
 
-    horloge = HorlogeSysteme()
-    analyser = AnalyseurTexte(langue_instance, horloge)
 
-    print(langue_instance.saluer(horloge.heure_actuelle()))
+    horloge = HorlogeSysteme()
+    analyser = AnalyseurTexte(langue, horloge)
+
+    print(langue.saluer(horloge.heure_actuelle()))
 
     while True:
         texte = input("Écrivez quelque chose: ")
         if texte.lower() == 'quit':
-            print(langue_instance.acquitter(horloge.heure_actuelle()))
+            print(langue.acquitter(horloge.heure_actuelle()))
             break
 
         print(analyser.analyser_chaine(texte))

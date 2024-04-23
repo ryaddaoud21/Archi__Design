@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from Source.Domain.Langue import Langue
+from Source.Domain.Langue.Langue import Langue
 from Source.Domain.Horloge import Horloge
 
 

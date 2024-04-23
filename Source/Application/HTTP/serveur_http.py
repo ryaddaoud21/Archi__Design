@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
-from Source.Domain.Langue import Anglais,Francais
+from Source.Domain.Langue.Langue import Anglais,Francais
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 
 

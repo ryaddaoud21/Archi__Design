@@ -1,7 +1,7 @@
 import unittest
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
-from Source.Domain.Langue import Francais
+from Source.Domain.Langue.Langue import Francais
 
 class TestAnalyseurTexte(unittest.TestCase):
     def test_palindrome_detection(self):
