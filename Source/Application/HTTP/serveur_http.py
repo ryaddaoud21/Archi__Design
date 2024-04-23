@@ -1,5 +1,4 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from urllib.parse import urlparse, parse_qs
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
 from Source.Domain.Langue.LanguesSupportees import Francais, Anglais
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
@@ -7,7 +6,7 @@ import json
 
 
 class RequetesHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
+    def do_GET(self, request=None, client_address=None, server=None):
         langue = self.headers.get('Accept-Language', 'fr')
         horloge = HorlogeSysteme()
         salutation = self._choisir_langue(langue).saluer(horloge.heure_actuelle())
@@ -17,7 +16,7 @@ class RequetesHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(salutation.encode('utf-8'))
 
-    def do_POST(self):
+    def do_POST(self, request=None, client_address=None, server=None):
         contenu_longueur = int(self.headers['Content-Length'])
         contenu = self.rfile.read(contenu_longueur).decode('utf-8')
         data = json.loads(contenu)
