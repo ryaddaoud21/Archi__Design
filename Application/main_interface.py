@@ -1,4 +1,5 @@
-from Domain.services import Francais, Anglais, AnalyseurTexte
+from Domain.InterfaceAnalyseur import AnalyseurTexte
+from Domain.Langue import Anglais,Francais
 from Infrastructure.HorlogeSysteme import HorlogeSysteme
 
 
