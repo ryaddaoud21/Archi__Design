@@ -8,8 +8,8 @@ class TestAnalyseurTexte(unittest.TestCase):
         langue = Francais()
         horloge = HorlogeSysteme()
         analyseur = AnalyseurTexte(langue, horloge)
-        self.assertTrue(analyseur.analyser_chaine("radar"))
-        self.assertFalse(analyseur.analyser_chaine("hello"))
+        self.assertEqual(analyseur.analyser_chaine("radar"), "radar  Bien dit !")
+        self.assertEqual(analyseur.analyser_chaine("hello"), "olleh")
 
 if __name__ == '__main__':
     unittest.main()
