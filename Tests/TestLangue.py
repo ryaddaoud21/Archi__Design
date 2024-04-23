@@ -1,5 +1,5 @@
 import unittest
-from Source.Domain.Langue.Langue import Anglais,Francais
+from Source.Domain.InterfaceLangue import Anglais,Francais
 
 class TestLangue(unittest.TestCase):
     def test_french_greeting(self):

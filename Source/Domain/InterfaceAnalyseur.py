@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from Source.Domain.Langue.Langue import Langue
-from Source.Domain.Horloge import Horloge
+from Source.Domain.InterfaceLangue import Langue
+from Source.Domain.InterfaceHorloge import Horloge
 
 
 class InterfaceAnalyseur(ABC):

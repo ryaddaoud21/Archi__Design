@@ -1,4 +1,4 @@
-from Source.Domain.Horloge import Horloge
+from Source.Domain.InterfaceHorloge import Horloge
 import datetime
 
 

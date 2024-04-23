@@ -1,17 +1,5 @@
-from abc import ABC, abstractmethod
+from Source.Domain.InterfaceLangue import Langue
 
-class Langue(ABC):
-    @abstractmethod
-    def saluer(self, heure: int) -> str:
-        pass
-
-    @abstractmethod
-    def acquitter(self, heure: int) -> str:
-        pass
-
-    @abstractmethod
-    def feliciter(self) -> str:
-        pass
 
 class Francais(Langue):
     def saluer(self, heure: int) -> str:

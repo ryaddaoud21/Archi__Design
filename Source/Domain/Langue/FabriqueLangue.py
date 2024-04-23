@@ -1,5 +1,6 @@
-from Source.Domain.Langue.Langue import Langue
-from Source.Domain.Langue.Langue import Francais, Anglais
+from Source.Domain import Langue
+from Source.Domain.Langue.LanguesSupportees import Francais, Anglais
+
 
 class FabriqueLangue:
     @staticmethod
