@@ -1,5 +1,5 @@
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
-from Source.Domain.Langue import Anglais,Francais
+from Source.Domain.Langue import Anglais, Francais
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 
 
@@ -29,7 +29,6 @@ def main():
         print(analyser.analyser_chaine(texte))
         print(f"Mirroir: {texte[::-1]}")
 
+
 if __name__ == "__main__":
     main()
-
-

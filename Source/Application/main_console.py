@@ -10,7 +10,7 @@ def saluer(langue='fr'):
             return "Bonsoir"
     elif langue == 'en':
         if 6 <= heure < 18:
-            return "Good morning"
+            return "Good Morning"
         else:
             return "Good evening"
     else:
