@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from Application.main_console import main
+from Source.Application.main_console import main
 
 class TestMainConsole(unittest.TestCase):
     def test_greeting(self):

@@ -1,6 +1,6 @@
-from Domain.InterfaceAnalyseur import AnalyseurTexte
-from Domain.Langue import Anglais,Francais
-from Infrastructure.HorlogeSysteme import HorlogeSysteme
+from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
+from Source.Domain.Langue import Anglais,Francais
+from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 
 
 def main():

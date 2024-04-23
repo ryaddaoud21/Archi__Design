@@ -1,5 +1,5 @@
 import unittest
-from Domain.Langue import Anglais,Francais
+from Source.Domain.Langue import Anglais,Francais
 
 class TestLangue(unittest.TestCase):
     def test_french_greeting(self):
@@ -8,7 +8,7 @@ class TestLangue(unittest.TestCase):
 
     def test_english_greeting(self):
         langue = Anglais()
-        self.assertEqual(langue.saluer(10), "Good morning")
+        self.assertEqual(langue.saluer(10), "Good Morning")
 
 if __name__ == '__main__':
     unittest.main()
