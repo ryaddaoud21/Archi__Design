@@ -5,7 +5,7 @@ from http.server import HTTPServer
 from http.client import HTTPConnection
 import json
 
-from Source.Application.HTTP.serveur_http import RequetesHandler
+from Source.Application.HTTP.RequetesHandler import RequetesHandler
 from Source.Domain.Langue.LanguesSupportees import Francais, Anglais
 
 class TestRequetesHandler(unittest.TestCase):

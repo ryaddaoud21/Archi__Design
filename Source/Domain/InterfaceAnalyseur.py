@@ -8,16 +8,17 @@ class InterfaceAnalyseur(ABC):
     def analyser_chaine(self, chaine: str) -> str:
         pass
 
-
-class AnalyseurTexte(InterfaceAnalyseur):
+class AnalyseurTexte:
     def __init__(self, langue: Langue, horloge: Horloge):
-        self.langue = langue
-        self.horloge = horloge
-
+        self._langue = langue
+        self._horloge = horloge
 
     def analyser_chaine(self, chaine: str) -> str:
         chaine_inverse = chaine[::-1]
-        if chaine.lower() == chaine_inverse.lower():
-            return f"{chaine}  {self.langue.feliciter()}"
+        if self._est_palindrome(chaine):
+            return f"{chaine}  {self._langue.feliciter()}"
         else:
             return chaine_inverse
+
+    def _est_palindrome(self, chaine: str) -> bool:
+        return chaine.lower() == chaine[::-1].lower()

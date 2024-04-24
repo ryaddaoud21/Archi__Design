@@ -1,43 +1,30 @@
 from Source.Domain.InterfaceLangue import Langue
+from Source.Domain.Langue.MessagesLangue import MESSAGES_FR, MESSAGES_EN
 
 
 class Francais(Langue):
     def saluer(self, heure: int) -> str:
-        if 6 <= heure < 12:
-            return "Bonjour"
-        elif 12 <= heure < 18:
-            return "Bon après-midi"
-        elif 18 <= heure < 22:
-            return "Bonsoir"
-        else:
-            return "Bonne nuit"
+        # Utilisation des messages de langue française
+        return MESSAGES_FR['salutations']['matin'] if 6 <= heure < 12 else MESSAGES_FR['salutations']['soir']
+
     def acquitter(self, heure: int) -> str:
-        if 6 <= heure < 12:
-            return "Bonne journée"
-        elif 12 <= heure < 18:
-            return "Bonne après-midi"
-        elif 18 <= heure < 22:
-            return "Bonne soirée"
-        else:
-            return "Bonne nuit"
+        # Utilisation des messages de langue française
+        return MESSAGES_FR['acquittements']['journee'] if 6 <= heure < 12 else MESSAGES_FR['acquittements']['soiree']
 
     def feliciter(self) -> str:
-        return "Bien dit !"
+        # Utilisation des messages de langue française
+        return MESSAGES_FR['felicitation']
 
 
 class Anglais(Langue):
     def saluer(self, heure: int) -> str:
-        if 6 <= heure < 12:
-            return "Good Morning"
-        elif 12 <= heure < 18:
-            return "Good Afternoon"
-        elif 18 <= heure < 22:
-            return "Good Evening"
-        else:
-            return "Good Night"
+        # Utilisation des messages de langue anglaise
+        return MESSAGES_EN['salutations']['matin'] if 6 <= heure < 12 else MESSAGES_EN['salutations']['evening']
 
     def acquitter(self, heure: int) -> str:
-        return "Goodbye"
+        # Utilisation des messages de langue anglaise
+        return MESSAGES_EN['acquittements']['journee'] if 6 <= heure < 12 else MESSAGES_EN['acquittements']['soiree']
 
     def feliciter(self) -> str:
-        return "Well said!"
+        # Utilisation des messages de langue anglaise
+        return MESSAGES_EN['felicitation']
