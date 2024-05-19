@@ -1,4 +1,4 @@
-from Source.Domain.Langue.FabriqueLangue import FabriqueLangue
+from Source.Langue.FabriqueLangue import FabriqueLangue
 from Source.Infrastructure.HorlogeSysteme import HorlogeSysteme
 from Source.Domain.InterfaceAnalyseur import AnalyseurTexte
 

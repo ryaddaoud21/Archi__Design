@@ -1,5 +1,5 @@
-from Source.Domain import Langue
-from Source.Domain.Langue.LanguesSupportees import Francais, Anglais
+from Source import Langue
+from Source.Langue.LanguesSupportees import Francais, Anglais
 
 
 class FabriqueLangue:

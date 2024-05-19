@@ -1,5 +1,5 @@
 from Source.Domain.InterfaceLangue import Langue
-from Source.Domain.Langue.MessagesLangue import MESSAGES_FR, MESSAGES_EN
+from Source.Langue.MessagesLangue import MESSAGES_FR, MESSAGES_EN
 
 
 class Francais(Langue):
@@ -19,7 +19,7 @@ class Francais(Langue):
 class Anglais(Langue):
     def saluer(self, heure: int) -> str:
         # Utilisation des messages de langue anglaise
-        return MESSAGES_EN['salutations']['matin'] if 6 <= heure < 12 else MESSAGES_EN['salutations']['evening']
+        return MESSAGES_EN['salutations']['matin'] if 6 <= heure < 12 else MESSAGES_EN['salutations']['soir']
 
     def acquitter(self, heure: int) -> str:
         # Utilisation des messages de langue anglaise
